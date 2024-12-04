@@ -242,8 +242,8 @@ function toNumber(value, def) {
  *   -2 => -8
  *   0  => 0
  */
-function getCube(/* num */) {
-  throw new Error('Not implemented');
+function getCube(num) {
+  return num ** 3;
 }
 
 /**
@@ -259,8 +259,16 @@ function getCube(/* num */) {
  *   3  => 2
  *   10 => 55
  */
-function getFibonacciNumber(/* index */) {
-  throw new Error('Not implemented');
+function getFibonacciNumber(index) {
+  let result;
+  let a = 0;
+  let b = 1;
+  for (let i = 0; i < index; i += 1) {
+    result = a + b;
+    a = b;
+    b = result;
+  }
+  return a;
 }
 
 /**
@@ -274,8 +282,12 @@ function getFibonacciNumber(/* index */) {
  *   10 => 55 // (1+2+3+...+10)
  *   1  => 1
  */
-function getSumToN(/* n */) {
-  throw new Error('Not implemented');
+function getSumToN(n) {
+  let result = 0;
+  for (let i = 0; i <= n; i += 1) {
+    result += i;
+  }
+  return result;
 }
 
 /**
@@ -289,8 +301,13 @@ function getSumToN(/* n */) {
  *   202 => 4  // (2+0+2)
  *   5   => 5  // 5
  */
-function getSumOfDigits(/* num */) {
-  throw new Error('Not implemented');
+function getSumOfDigits(num) {
+  let x = 0;
+  const length = String(num);
+  for (let i = 0; i < length.length; i += 1) {
+    x += +length[i];
+  }
+  return x;
 }
 
 /**
