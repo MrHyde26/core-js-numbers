@@ -321,8 +321,8 @@ function getSumOfDigits(num) {
  *   16  => true
  *   15  => false
  */
-function isPowerOfTwo(/* num */) {
-  throw new Error('Not implemented');
+function isPowerOfTwo(num) {
+  return num > 0 && Math.log2(num) % 1 === 0;
 }
 
 /**
@@ -627,8 +627,15 @@ function getHypotenuse(/* a, b */) {
  * 10 => 5
  * 15 => 8
  */
-function getCountOfOddNumbers(/* number */) {
-  throw new Error('Not implemented');
+function getCountOfOddNumbers(number) {
+  const num = Math.abs(number);
+  let result = 0;
+  for (let i = 0; i <= num; i += 1) {
+    if (i % 2 !== 0) {
+      result += 1;
+    }
+  }
+  return result;
 }
 
 module.exports = {
